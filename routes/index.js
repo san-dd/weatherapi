@@ -12,7 +12,7 @@ router.get('/weather',appkeycheck ,async(req, res, next)=>{
     const newAudit = new audit({
       appkey:req.query.appkey,
       api:req.originalUrl,
-      ip: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+      ip: req.headers['x-real-ip']||req.headers['x-forwarded-for'] || req.connection.remoteAddress,
       isPrimeDate:isPrimeDate
     });
     const saveAudit = await newAudit.save();
@@ -23,6 +23,7 @@ router.get('/weather',appkeycheck ,async(req, res, next)=>{
     }
   }catch(err){
     console.error(err)
+    res.status(500)
     res.json( {msg:"Something get wrong, Please try again"});
   }
   

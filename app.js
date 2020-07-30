@@ -5,7 +5,6 @@ var logger = require('morgan');
 var mongoose=require('mongoose')
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 //create database connection
 const {MONGO_URI,MONGO_DB_NAME,APPKEY} = require('./config/appConfig');
@@ -37,7 +36,6 @@ app.use(express.urlencoded({ extended: false }));
 
 //route
 app.use('/',indexRouter);
-app.use('/users', usersRouter);
 
 
 // catch 404 and forward to error handler
