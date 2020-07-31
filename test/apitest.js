@@ -17,5 +17,16 @@ describe("weather api!", () => {
         done();
       });
   });
+  it("get weather live report api", done => {
+    chai
+      .request(app)
+      .get("/liveweather")
+      .query({appkey:APPKEY})
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.body).to.exist
+        done();
+      });
+  });
   
 });
