@@ -26,7 +26,7 @@ Run Tests
 # API details
 1)response from static json file
 Visit [http://localhost:3000/weather?appkey=sl_myJwtSecret](http://localhost:3000/weather)
-api code: ```curl --location --request GET 'http://localhost:3000/weather?appkey=sl_myJwtSecret```
+api code: ```curl --location --request GET 'http://localhost:3000/weather?appkey=sl_myJwtSecret```  
 2)response from https://samples.openweathermap.org
 Visit [http://localhost:3000/liveweather?&appkey=sl_myJwtSecret](http://localhost:3000/weather)
 api code: ```curl --location --request GET 'http://localhost:3000/liveweather?appkey=sl_myJwtSecret```
